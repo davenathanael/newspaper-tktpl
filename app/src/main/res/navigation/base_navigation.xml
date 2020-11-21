@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="id.ac.ui.cs.mobileprogramming.davenathanael.newspaper.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_story"
+            app:destination="@id/navigation_story" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_saved_items"
+        android:name="id.ac.ui.cs.mobileprogramming.davenathanael.newspaper.ui.saveditems.SavedItemsFragment"
+        tools:layout="@layout/fragment_saved_items" />
+
+    <fragment
+        android:id="@+id/navigation_options"
+        android:name="id.ac.ui.cs.mobileprogramming.davenathanael.newspaper.ui.options.OptionsFragment"
+        tools:layout="@layout/fragment_options" />
+    <fragment
+        android:id="@+id/navigation_story"
+        android:name="id.ac.ui.cs.mobileprogramming.davenathanael.newspaper.ui.home.StoryFragment"
+        tools:layout="@layout/fragment_story">
+        <argument
+            android:name="url"
+            app:argType="string"/>
+        <argument
+            android:name="title"
+            app:argType="string"/>
+        <argument
+            android:name="author"
+            app:argType="string"/>
+        <argument
+            android:name="id"
+            app:argType="long"/>
+        <action
+            android:id="@+id/action_navigation_story_to_navigation_new_saved_item"
+            app:destination="@id/navigation_new_saved_item" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_new_saved_item"
+        android:name="id.ac.ui.cs.mobileprogramming.davenathanael.newspaper.ui.saveditems.NewSavedItemFragment"
+        tools:layout="@layout/fragment_new_saved_item">
+        <argument
+            android:name="url"
+            app:argType="string"/>
+        <argument
+            android:name="title"
+            app:argType="string"/>
+        <argument
+            android:name="author"
+            app:argType="string"/>
+        <argument
+            android:name="id"
+            app:argType="long"/>
+    </fragment>
+</navigation>

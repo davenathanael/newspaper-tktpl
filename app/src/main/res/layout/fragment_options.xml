@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FAFAFA"
+        tools:context=".ui.options.OptionsFragment">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_tags_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="16dp">
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:name="id.ac.ui.cs.mobileprogramming.davenathanael.newspaper.ui.options.TagsOptionFragment"
+                android:id="@+id/card_tags_options_fragment"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_subscribed_keywords_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_tags_options"
+            android:layout_margin="16dp"
+            android:padding="16dp">
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:name="id.ac.ui.cs.mobileprogramming.davenathanael.newspaper.ui.options.SubscribedKeywordsOptionFragment"
+                android:id="@+id/card_susbcribed_keywords_options_fragment"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_export_saved_items_options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_subscribed_keywords_options"
+            android:layout_margin="16dp"
+            android:padding="16dp">
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:name="id.ac.ui.cs.mobileprogramming.davenathanael.newspaper.ui.options.ExportSavedItemsOptionFragment"
+                android:id="@+id/card_export_saved_items_options_fragment"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
