@@ -37,8 +37,10 @@ class ExportSavedItemsOptionFragment : Fragment() {
 
         viewModel.savedItems.observe(viewLifecycleOwner) { items ->
             binding.setClickListener {
-                if (checkSelfPermission(requireContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                    requestPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), PERMISSIONS_REQUEST_CODE)
+                if (checkSelfPermission(requireContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    != PackageManager.PERMISSION_GRANTED) {
+                    requestPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                        PERMISSIONS_REQUEST_CODE)
                 } else {
                     export(items)
                 }
